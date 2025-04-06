@@ -392,7 +392,6 @@ impl ObligationLiquidity {
     pub fn accrue_interest(&mut self, cumulative_borrow_rate_wads: Decimal) -> ProgramResult {
         match cumulative_borrow_rate_wads.cmp(&self.cumulative_borrow_rate_wads) {
             Ordering::Less => {
-                msg!("Interest rate cannot be negative");
                 return Err(LendingError::NegativeInterestRate.into());
             }
             Ordering::Equal => {}
