@@ -9,7 +9,7 @@ use bytemuck::bytes_of;
 use std::convert::TryFrom;
 
 use num_traits::FromPrimitive;
-use solana_program::system_program;
+use solana_sdk_ids::system_program;
 use solana_program::{
     instruction::{AccountMeta, Instruction},
     msg,
